@@ -42,7 +42,13 @@ module.exports = {
 			message.reply(`Silly you, you've already been sorted!`);
 			return;
 		} else {
-			message.author.send(songs[Math.floor(Math.random() * 3)]);
+			let song = Math.floor(Math.random() * 3);
+			message.author.send(songs[song]);
+			if (song === 2) {
+				message.author.send(songs[song + 1]);
+				message.author.send(songs[song + 2]);
+			}
+			
 		}
 	},
 };
