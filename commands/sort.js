@@ -1,6 +1,7 @@
 module.exports = {
 	name: 'sort',
 	description: 'Sort the user into a house!',
+	guildOnly: true,
 	execute(message, args) {
 		const roles = message.guild.roles;
 		const {songs} = require('./helper/song.json');
