@@ -1,8 +1,9 @@
 module.exports = {
 	name: 'sort',
-	description: 'Sorth the user into a house!',
+	description: 'Sort the user into a house!',
 	execute(message, args) {
 		const roles = message.guild.roles;
+		const {songs} = require('./helper/song.json');
 		if (!roles.some(role => role.name === 'Hufflepuff')) {
 			message.guild.createRole({
 				name: 'Hufflepuff',
@@ -40,7 +41,7 @@ module.exports = {
 			message.reply(`Silly you, you've already been sorted!`);
 			return;
 		} else {
-			message.author.send('Time to begin the Sorting Ceremony!');
+			message.author.send(songs[Math.floor(Math.random() * 3)]);
 		}
 	},
 };
