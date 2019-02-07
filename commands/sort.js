@@ -1,3 +1,4 @@
+const Quiz = require('./helper/quiz.js');
 module.exports = {
 	name: 'sort',
 	description: 'Sort the user into a house!',
@@ -44,11 +45,12 @@ module.exports = {
 		} else {
 			let song = Math.floor(Math.random() * 3);
 			message.author.send(songs[song]);
+			// 2000 char limit
 			if (song === 2) {
 				message.author.send(songs[song + 1]);
 				message.author.send(songs[song + 2]);
 			}
-			
+			Quiz.quiz(message);
 		}
 	},
 };

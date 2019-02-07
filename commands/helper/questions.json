@@ -1,0 +1,6 @@
+[
+    {
+        "question" : "What house do you want to be in?",
+        "answers" : ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+    }
+]
