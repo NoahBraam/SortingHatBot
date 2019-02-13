@@ -18,7 +18,7 @@ module.exports = {
 		if (!roles.some(role => role.name === 'Ravenclaw')) {
 			message.guild.createRole({
 				name: 'Ravenclaw',
-				color: '#222f5b',
+				color: '#082664',
 				mentionable: true,
 			})
 			.then(role => console.log(`Created new role with name ${role.name}`))
