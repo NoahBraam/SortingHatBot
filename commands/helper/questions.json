@@ -1,6 +1,7 @@
 [
     {
         "question" : "What house do you want to be in?",
-        "answers" : ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+        "answers" : ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"],
+        "thumbnail" : "https://i.pinimg.com/236x/06/50/5e/06505e05ccfac3798335b82e110b6561.jpg"
     }
 ]
