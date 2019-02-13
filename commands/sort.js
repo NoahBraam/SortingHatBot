@@ -10,6 +10,7 @@ module.exports = {
 			message.guild.createRole({
 				name: 'Hufflepuff',
 				color: '#ecb939',
+				mentionable: true,
 			})
 			.then(role => console.log(`Created new role with name ${role.name}`))
 			.catch(console.error);
@@ -18,6 +19,7 @@ module.exports = {
 			message.guild.createRole({
 				name: 'Ravenclaw',
 				color: '#222f5b',
+				mentionable: true,
 			})
 			.then(role => console.log(`Created new role with name ${role.name}`))
 			.catch(console.error);
@@ -26,6 +28,7 @@ module.exports = {
 			message.guild.createRole({
 				name: 'Slytherin',
 				color: '#2a623d',
+				mentionable: true,
 			})
 			.then(role => console.log(`Created new role with name ${role.name}`))
 			.catch(console.error);
@@ -34,6 +37,7 @@ module.exports = {
 			message.guild.createRole({
 				name: 'Gryffindor',
 				color: '#ae0001',
+				mentionable: true,
 			})
 			.then(role => console.log(`Created new role with name ${role.name}`))
 			.catch(console.error);
@@ -50,7 +54,16 @@ module.exports = {
 				message.author.send(songs[song + 1]);
 				message.author.send(songs[song + 2]);
 			}
-			Quiz.quiz(message);
+			Quiz.quiz(message)
+				.then(houseName => {
+					let houseRole = message.guild.roles.find(role => role.name.toLowerCase() === houseName);
+					member.addRole(houseRole);
+					message.reply(`Congrats, and welcome to ${houseRole}!`);
+				})
+				.catch(() => {
+					message.reply(`Sorry, you weren't sorted.`);
+					console.error;
+				});
 		}
 	},
 };
