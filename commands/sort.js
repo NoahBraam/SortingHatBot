@@ -56,7 +56,7 @@ module.exports = {
 			}
 			Quiz.quiz(message)
 				.then(houseName => {
-					let houseRole = message.guild.roles.find(role => role.name.toLowerCase() === houseName);
+					let houseRole = message.guild.roles.find(role => role.name.toLowerCase() === houseName.toLowerCase());
 					member.addRole(houseRole);
 					message.reply(`Congrats, and welcome to ${houseRole}!`);
 				})
