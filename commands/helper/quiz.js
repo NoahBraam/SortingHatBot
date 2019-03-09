@@ -6,7 +6,7 @@ module.exports = {
             const item = quiz[Math.floor(Math.random() * quiz.length)];
 
             const filter = response => {
-                return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+                return item.answers.some(answer => answer.answer.toLowerCase() === response.content.toLowerCase());
             };
 
             let answerString = createAnswerString(item.answers);
@@ -36,7 +36,7 @@ function createAnswerString(answers) {
     var answerString = "";
 
     for (i = 0; i<answers.length; i++) {
-        answerString += `${i+1}) ${answers[i]}\n`;
+        answerString += `${i+1}) ${answers[i].answer}\n`;
     }
     return answerString;
 }
